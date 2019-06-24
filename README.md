@@ -14,6 +14,9 @@ Outra informação importante é que vocês devem executar o códido update-data
 
 # Como deve ser feito
 1 - Vocês devem adaptar as paginas HTML do blog de vocês, parte externa, ao modelo apresentado;
+
 2 - No Layout externo deve ter o link para o css que foi criado no blog de vocês. Isso vale para o Javascript também;
+
 3 - Vocês devem adaptar a Model de post conforme as necessidades de vocês;
+
 4 - O blog deve estar funcional;
