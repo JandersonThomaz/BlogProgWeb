@@ -12,7 +12,7 @@ A parte interna é o gerenciamento do blog e a parte externa são as paginas: pr
 
 Outra informação importante é que vocês devem executar o códido update-database no Console do Gerenciador de Pacotes do visual studio, isso vai rodar os migrations para a maquina de vocês.
 
-A parte interna estar funcional. Mas se mudar o model Post as Views de Create e Edit devem ser alteradas seguindo o modelo apresentado nas views.
+A parte interna estar funcional. Mas se mudar o model Post, as Views de Create e Edit devem ser alteradas seguindo o modelo já apresentado nas views.
 
 # Como deve ser feito
 1 - Vocês devem adaptar as paginas HTML do blog de vocês, parte externa, ao modelo apresentado;
