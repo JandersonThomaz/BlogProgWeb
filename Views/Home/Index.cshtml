@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutExterno.cshtml";
+}
+
+@if (ViewBag.Posts is null)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+            <p>Sem posts. :-)</p>
+        </div>
+    </div>
+}
+else
+{
+    foreach (var item in ViewBag.Posts)
+    {
+        <div class="card mb-4">
+            <div class="card-body">
+                <a asp-action="Post" asp-route-id="@item.Id">
+                    <h5 class="card-title">@item.Titulo</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">@item.SubTitulo</h6>
+                <p class="card-text"><small class="text-muted">@item.Categoria.Nome</small></p>
+
+            </div>
+        </div>
+    }
+}

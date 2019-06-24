@@ -1,0 +1,60 @@
+﻿@model BlogProgWeb.Models.Post
+
+@{
+    ViewData["Title"] = "Editar um post";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Dados do post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTitulo" class="control-label"></label>
+                <input asp-for="SubTitulo" class="form-control" />
+                <span asp-validation-for="SubTitulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conteudo" class="control-label"></label>
+                <textarea asp-for="Conteudo" class="form-control"></textarea>
+                <span asp-validation-for="Conteudo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoriaId" class="control-label"></label>
+                <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
+                <span asp-validation-for="CategoriaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script src="~/lib/summernote/dist/summernote-bs4.js"></script>
+<script src="~/lib/summernote/dist/lang/summernote-pt-BR.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#Conteudo').summernote({
+            height: 400,
+            lang: 'pt-BR'
+        });
+    });
+</script>
+}

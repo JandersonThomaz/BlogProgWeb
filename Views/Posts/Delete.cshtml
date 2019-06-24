@@ -1,0 +1,18 @@
+﻿@model BlogProgWeb.Models.Post
+
+@{
+    ViewData["Title"] = "Excluir post";
+}
+
+<h1> @ViewData["Title"]</h1>
+
+<h3>Você tem certeza que deseja excluir o post <strong>@Model.Titulo</strong>?</h3>
+<div>
+    <hr />
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sim" class="btn btn-danger" /> |
+        <a asp-action="Index">Não</a>
+    </form>
+</div>

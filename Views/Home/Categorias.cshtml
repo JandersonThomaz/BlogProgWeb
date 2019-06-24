@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BlogProgWeb.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Categorias";
+    Layout = "~/Views/Shared/_LayoutExterno.cshtml";
+}
+
+
+
+@if (Model is null)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+            <p>Sem categorias. :-)</p>
+        </div>
+    </div>
+}
+else
+{
+    foreach (var categoria in Model)
+    {
+
+
+        @if (categoria.Posts.Any())
+        {
+            <h1>@categoria.Nome</h1>
+
+            @foreach (var post in categoria.Posts)
+            {
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <a asp-action="Post" asp-route-id="@post.Titulo">
+                            <h5 class="card-title">@post.Titulo</h5>
+                        </a>
+                        <h6 class="card-subtitle mb-2 text-muted">@post.SubTitulo</h6>
+                    </div>
+                </div>
+            }
+        }
+    }
+}

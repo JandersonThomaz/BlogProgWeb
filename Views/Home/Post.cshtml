@@ -1,0 +1,17 @@
+﻿@model BlogProgWeb.Models.Post
+
+@{
+    ViewData["Title"] = "Post";
+    Layout = "~/Views/Shared/_LayoutExterno.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h1>@Model.Titulo</h1>
+        <h4 class="mb-5">@Model.SubTitulo</h4>
+
+        @Html.Raw(Model.Conteudo)
+        <hr/>
+        <a asp-action="Index">Voltar</a>
+    </div>
+</div>
